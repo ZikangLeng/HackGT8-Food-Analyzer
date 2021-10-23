@@ -10,11 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from imageProcess import *
-from database import *
 
 class Ui_Dialog(object):
-    foodname = "unknown"
-    weight = 0
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(807, 662)
@@ -61,7 +58,6 @@ class Ui_Dialog(object):
         self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
-        self.weightButton.clicked.connect(self.weightButtonClicked)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -73,8 +69,7 @@ class Ui_Dialog(object):
             image_profile = QtGui.QImage(image_path) #QImage object
             image_profile = image_profile.scaled(400,350, aspectRatioMode=QtCore.Qt.KeepAspectRatio, transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
             self.foodGraphic.setPixmap(QtGui.QPixmap.fromImage(image_profile)) 
-            self.foodname = imageProcesser.foodname
-            self.nameText.setText("Name: "+self.foodname)
+            self.nameText.setText("Name: "+imageProcesser.foodname)
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
     def weightButtonClicked(self):
