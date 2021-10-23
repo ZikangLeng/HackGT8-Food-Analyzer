@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from imageProcess import *
+from database import*
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
