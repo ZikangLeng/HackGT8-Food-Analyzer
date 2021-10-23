@@ -25,11 +25,21 @@ class Ui_Dialog(object):
         self.nameText.setObjectName("nameText")
         
 
-        self.weightText = QtWidgets.QLineEdit(Dialog)
-        self.weightText.setGeometry(QtCore.QRect(470, 140, 261, 40))
+        self.weightText = QtWidgets.QTextBrowser(Dialog)
+        self.weightText.setGeometry(QtCore.QRect(470, 140, 150, 40))
         self.weightText.setObjectName("weightText")
         self.weightText.setText("Weight(in grams): ")
-        self.weightText.setFont(QtGui.QFont('Times font', 12))
+        self.weightText.setFont(QtGui.QFont('Times font', 10))
+        self.weightText.setStyleSheet("background-color: transparent;")
+        self.weightText.setFrameStyle(0)
+
+        self.weightEdit = QtWidgets.QLineEdit(Dialog)
+        self.weightText.setGeometry(QtCore.QRect(470, 140, 150, 40))
+        self.weightText.setObjectName("weightText")
+        self.weightText.setText("Weight(in grams): ")
+        self.weightText.setFont(QtGui.QFont('Times font', 10))
+        self.weightText.setStyleSheet("background-color: transparent;")
+        self.weightText.setFrameStyle(0)
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
         self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
