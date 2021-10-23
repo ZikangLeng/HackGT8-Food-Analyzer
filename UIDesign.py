@@ -79,7 +79,7 @@ class Ui_Dialog(object):
 
     def weightButtonClicked(self):
         dataProcesser = database()
-        self.weight = int(self.weightButton.getText())
+        self.weight = int(self.weightEdit.text())
         nutrient= dataProcesser.getNutrition(dataProcesser.getID(self.foodname),self.weight)
         self.nutrientText.setText("Nutrient Fact \n" +nutrient)
 
