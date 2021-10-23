@@ -12,9 +12,6 @@ from google.cloud import vision_v1p3beta1 as vision
 # Setup google authen client key
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
 
-# Source path content all images
-#SOURCE_PATH = "banna.jpg"
-
 FOOD_TYPE = 'Fruit'  # 'Vegetable'
 
 
@@ -82,6 +79,6 @@ def recognize_food(img_path, list_foods):
 print('---------- Start FOOD Recognition --------')
 list_foods = load_food_name(FOOD_TYPE)
 print(list_foods)
-path = "banna.jpg"
+path = "waffle.jpg"
 recognize_food(path, list_foods)
 print('---------- End ----------')
