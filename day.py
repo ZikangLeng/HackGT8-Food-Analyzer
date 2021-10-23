@@ -3,9 +3,9 @@ class Day:
     totalProtein = 0
     totalFat = 0
     totalCarbs = 0
-    foods = []
+    foods = ["test"]
 
-    def add(name, cal, protein, fat, carbs,self, foods):
+    def add(name, cal, protein, fat, carbs,self):
         self.foods.append(name)
 
 
