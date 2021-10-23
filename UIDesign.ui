@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QGraphicsView" name="graphicsView">
+  <widget class="QGraphicsView" name="foodGraphic">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="ProcessButton">
+  <widget class="QPushButton" name="processButton">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -36,7 +36,7 @@
     <string>Process </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AddButton">
+  <widget class="QPushButton" name="addButton">
    <property name="geometry">
     <rect>
      <x>480</x>
@@ -49,7 +49,7 @@
     <string>Add to Today</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QTextBrowser" name="nameText">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -66,7 +66,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Name:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser_2">
+  <widget class="QTextBrowser" name="weightText">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -83,7 +83,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Weight:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser_3">
+  <widget class="QTextBrowser" name="nutrientText">
    <property name="geometry">
     <rect>
      <x>470</x>
