@@ -105,7 +105,7 @@ class imageProcess:
         # Setup google authen client key
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
 
-        FOOD_TYPE = 'FList'  # 'Vegetable'
+        FOOD_TYPE = 'Food'  # 'Vegetable'
 
         print('---------- Start FOOD Recognition --------')
         list_foods = self.load_food_name(FOOD_TYPE)
