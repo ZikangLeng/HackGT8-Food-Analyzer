@@ -8,7 +8,7 @@ def get_mass():
     arduino_data = arduino.readline()
 
     mass = str(arduino_data[0:len(arduino_data)].decode("utf-8"))
-    print('arduino input: {mass}')
+    print('arduino input: ' + mass)
     arduino.close()
     return mass
 
@@ -16,6 +16,7 @@ def get_mass():
 # ----------------------------------------Main Code------------------------------------
 # Declare variables to be used
 
+print('Program started')
 
-time.sleep(2000)
+# Setting up the Arduino
 get_mass()
