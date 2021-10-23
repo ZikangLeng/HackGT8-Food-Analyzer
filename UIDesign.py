@@ -81,6 +81,7 @@ class Ui_Dialog(object):
         self.weight = int(self.weightEdit.text())
         nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
         self.nutrientText.setText("Nutrient Fact \n" +nutrient)
+        self.nutrientText.setFont(QtGui.QFont('Times font', 14))
 
 
     def retranslateUi(self, Dialog):
