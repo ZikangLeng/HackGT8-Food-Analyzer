@@ -1,13 +1,41 @@
 """
 Recognize food: fruit, vegetable
 """
-
 import io
 import os
 from datetime import datetime
 
 import cv2
 from google.cloud import vision_v1p3beta1 as vision
+
+cam = cv2.VideoCapture(0)
+
+cv2.namedWindow("test")
+
+img_counter = 0
+
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        print("failed to grab frame")
+        break
+    cv2.imshow("test", frame)
+
+    k = cv2.waitKey(1)
+    if k%256 == 27:
+        # ESC pressed
+        print("Escape hit, closing...")
+        break
+    elif k%256 == 32:
+        # SPACE pressed
+        img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(img_name, frame)
+        print("{} written!".format(img_name))
+        img_counter += 1
+
+cam.release()
+
+cv2.destroyAllWindows()
 
 # Setup google authen client key
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
@@ -79,6 +107,9 @@ def recognize_food(img_path, list_foods):
 print('---------- Start FOOD Recognition --------')
 list_foods = load_food_name(FOOD_TYPE)
 print(list_foods)
-path = "waffle.jpg"
+path = img_name
 recognize_food(path, list_foods)
 print('---------- End ----------')
+try: 
+    os.remove(img_name)
+except: pass
