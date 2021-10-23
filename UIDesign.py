@@ -43,11 +43,11 @@ class Ui_Dialog(object):
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
-        self.imageButton.setGeometry(QtCore.QRect(80, 470, 220, 100))
+        self.imageButton.setGeometry(QtCore.QRect(80, 470, 200, 100))
         self.imageButton.setObjectName("processButton")
 
         self.addButton = QtWidgets.QPushButton(Dialog)
-        self.addButton.setGeometry(QtCore.QRect(480, 470, 220, 100))
+        self.addButton.setGeometry(QtCore.QRect(500, 470, 200, 100))
         self.addButton.setObjectName("imageButton")
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
