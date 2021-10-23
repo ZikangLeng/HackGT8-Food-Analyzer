@@ -1,6 +1,3 @@
-"""
-Recognize food: fruit, vegetable
-"""
 import io
 import os
 from datetime import datetime
