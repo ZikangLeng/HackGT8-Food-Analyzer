@@ -35,7 +35,6 @@ class database:
         for nutrient in output:
             outputStr = outputStr + str(nutrient) + "\n"
         return outputStr 
-                
 
 
 
