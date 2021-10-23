@@ -40,7 +40,7 @@ cv2.destroyAllWindows()
 # Setup google authen client key
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
 
-FOOD_TYPE = 'Fruit'  # 'Vegetable'
+FOOD_TYPE = 'Food'  # 'Vegetable'
 
 
 def load_food_name(food_type):
