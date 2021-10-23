@@ -22,17 +22,14 @@ class database:
                     output.append("Fat: " + str(float(row[3])*mass/100) + " g")
                 elif row[2] == '1005':
                     output.append("Carbs: " + str(float(row[3])*mass/100) + " g")
+                elif row[2] == "1008":
+                    output.append("Calories: " + str(float(row[3])*mass/100) + " kCal")
         
         outputStr = ""
         for nutrient in output:
             outputStr = outputStr + str(nutrient) + "\n"
         return outputStr 
                 
-    def getCal(id):
-        NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
-        for row in NutritionFile:
-            if row[1] == id and row[2] == "1008":
-                return row[2]
                 
 print(database.getNutrition(database.getID("Milk"), 300))
 
