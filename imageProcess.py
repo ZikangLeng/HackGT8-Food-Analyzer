@@ -63,11 +63,13 @@ class imageProcess:
                 food = " " + food
                 if (desc in food):
                     food= food[1:len(food)]
-                    foodname = food
-                    print(foodname)
+                    self.foodname = food
+                    print(self.foodname)
 
                     # Get first fruit only
                     break
+            if self.foodname != "unknown":
+                break
 
     def takeImage(self):
         

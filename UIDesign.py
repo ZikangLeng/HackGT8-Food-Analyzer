@@ -23,10 +23,13 @@ class Ui_Dialog(object):
         self.nameText = QtWidgets.QTextBrowser(Dialog)
         self.nameText.setGeometry(QtCore.QRect(470, 90, 261, 40))
         self.nameText.setObjectName("nameText")
+        
 
-        self.weightText = QtWidgets.QTextBrowser(Dialog)
+        self.weightText = QtWidgets.QLineEdit(Dialog)
         self.weightText.setGeometry(QtCore.QRect(470, 140, 261, 40))
         self.weightText.setObjectName("weightText")
+        self.weightText.setText("Weight(in grams): ")
+        self.weightText.setFont(QtGui.QFont('Times font', 12))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
         self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
@@ -65,11 +68,6 @@ class Ui_Dialog(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Name:</span></p></body></html>"))
-        self.weightText.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Weight:</span></p></body></html>"))
         self.nutrientText.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
