@@ -6,6 +6,11 @@ class database:
         FoodFile = csv.reader(open('food.csv', "r"), delimiter= ',')
         for data in FoodFile:
             id = data[0]
+            name = data[2].split(",")[0].strip().lower()
+            if name == keyword.lower():
+                return id
+        for data in FoodFile:
+            id = data[0]
             name = data[2]
             if name.__contains__(keyword):
                 return id
