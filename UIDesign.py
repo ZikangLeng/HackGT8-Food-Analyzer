@@ -72,6 +72,13 @@ class Ui_Dialog(object):
             self.nameText.setText("Name: "+imageProcesser.foodname)
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
+    def weightButtonClicked(self):
+        self.weight = int(self.weightEdit.text())
+        nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
+        self.nutrientText.setText("Nutrient Fact \n" +nutrient)
+        self.nutrientText.setFont(QtGui.QFont('Times font', 14))
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Food Analyzer"))
