@@ -58,6 +58,7 @@ class Ui_Dialog(object):
         self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
+        self.weightButton.clicked.connect(self.weightButtonClicked)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -71,6 +72,10 @@ class Ui_Dialog(object):
             self.foodGraphic.setPixmap(QtGui.QPixmap.fromImage(image_profile)) 
             self.nameText.setText("Name: "+imageProcesser.foodname)
             self.nameText.setFont(QtGui.QFont('Times font', 14))
+
+    def weightButtonClicked(self):
+        dataProcesser = database()
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
