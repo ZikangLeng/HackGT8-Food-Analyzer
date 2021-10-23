@@ -14,6 +14,7 @@ class database:
             name = data[2]
             if name.__contains__(keyword):
                 return id
+        return "1097613"
 
     def getNutrition(id, mass):
         output = []
