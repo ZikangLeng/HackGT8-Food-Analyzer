@@ -2,7 +2,7 @@ import csv,sys
 
 class database:
     
-    def getID (keyword,self):
+    def getID (keyword):
         FoodFile = csv.reader(open('food.csv', "r"), delimiter= ',')
         for data in FoodFile:
             id = data[0]

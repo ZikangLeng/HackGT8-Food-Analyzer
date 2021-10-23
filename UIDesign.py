@@ -78,9 +78,8 @@ class Ui_Dialog(object):
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
     def weightButtonClicked(self):
-        dataProcesser = database()
         self.weight = int(self.weightEdit.text())
-        nutrient= dataProcesser.getNutrition(dataProcesser.getID(self.foodname),self.weight)
+        nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
         self.nutrientText.setText("Nutrient Fact \n" +nutrient)
 
 
