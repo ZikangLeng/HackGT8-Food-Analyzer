@@ -1,16 +1,11 @@
-"""
-Recognize food: fruit, vegetable
-"""
 import io
 import os
 from datetime import datetime
-
 import cv2
 from google.cloud import vision_v1p3beta1 as vision
 
 class imageProcess:
     foodname = "unknown"
-
 
     def load_food_name(self,food_type):
         """
