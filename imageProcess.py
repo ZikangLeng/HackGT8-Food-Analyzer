@@ -77,7 +77,6 @@ class imageProcess:
 
         cv2.namedWindow("test")
 
-        img_counter = 0
         camera_escaped = False
 
         while True:
@@ -95,10 +94,9 @@ class imageProcess:
                 break
             elif k%256 == 32:
                 # SPACE pressed
-                img_name = "opencv_frame_{}.png".format(img_counter)
+                img_name = "opencv_frame_{}.png".format(0)
                 cv2.imwrite(img_name, frame)
                 print("{} written!".format(img_name))
-                img_counter += 1
                 cam.release()
 
         cam.release()
