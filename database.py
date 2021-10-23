@@ -36,7 +36,7 @@ class database:
         for nutrient in output:
             outputStr = outputStr + str(nutrient) + "\n"
         return outputStr 
-print(database.getNutrition(database.getID("Milk"),100))
+
 
 
 
