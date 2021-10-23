@@ -3,7 +3,6 @@ Recognize food: fruit, vegetable
 """
 import io
 import os
-import json
 from datetime import datetime
 
 import cv2
@@ -64,11 +63,13 @@ class imageProcess:
                 food = " " + food
                 if (desc in food):
                     food= food[1:len(food)]
-                    foodname = food
-                    print(foodname)
+                    self.foodname = food
+                    print(self.foodname)
 
                     # Get first fruit only
                     break
+            if self.foodname != "unknown":
+                break
 
     def takeImage(self):
         
@@ -113,7 +114,3 @@ class imageProcess:
         try: 
             os.remove(img_name)
         except: pass
-
-test = imageProcess()
-
-test.takeImage()
