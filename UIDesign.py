@@ -23,7 +23,6 @@ class Ui_Dialog(object):
         self.nameText = QtWidgets.QTextBrowser(Dialog)
         self.nameText.setGeometry(QtCore.QRect(470, 90, 261, 40))
         self.nameText.setObjectName("nameText")
-        
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
         self.weightText.setGeometry(QtCore.QRect(470, 140, 150, 40))
@@ -43,12 +42,20 @@ class Ui_Dialog(object):
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
-        self.imageButton.setGeometry(QtCore.QRect(80, 470, 200, 100))
+        self.imageButton.setGeometry(QtCore.QRect(70, 470, 200, 100))
         self.imageButton.setObjectName("processButton")
+        self.imageButton.setFont(QtGui.QFont('Times font', 11))
 
         self.addButton = QtWidgets.QPushButton(Dialog)
-        self.addButton.setGeometry(QtCore.QRect(500, 470, 200, 100))
+        self.addButton.setGeometry(QtCore.QRect(530, 470, 200, 100))
         self.addButton.setObjectName("imageButton")
+        self.addButton.setFont(QtGui.QFont('Times font', 11))
+
+        self.weightButton = QtWidgets.QPushButton(Dialog)
+        self.weightButton.setGeometry(QtCore.QRect(300, 470, 200, 100))
+        self.weightButton.setObjectName("weightButton")
+        self.weightButton.setText("Input Weight")
+        self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
 

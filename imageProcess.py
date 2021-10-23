@@ -78,6 +78,7 @@ class imageProcess:
         cv2.namedWindow("test")
 
         img_counter = 0
+        camera_escaped = False
 
         while True:
             ret, frame = cam.read()
@@ -90,6 +91,7 @@ class imageProcess:
             if k%256 == 27:
                 # ESC pressed
                 print("Escape hit, closing...")
+                camera_escaped = True
                 break
             elif k%256 == 32:
                 # SPACE pressed
@@ -97,20 +99,22 @@ class imageProcess:
                 cv2.imwrite(img_name, frame)
                 print("{} written!".format(img_name))
                 img_counter += 1
+                cam.release()
 
         cam.release()
 
         cv2.destroyAllWindows()
 
-        # Setup google authen client key
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
+        if(camera_escaped == False):
+            # Setup google authen client key
+            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
 
-        FOOD_TYPE = 'FList'  # 'Vegetable'
+            FOOD_TYPE = 'Food'  # 'Vegetable'
 
-        print('---------- Start FOOD Recognition --------')
-        list_foods = self.load_food_name(FOOD_TYPE)
-        self.recognize_food(img_name, list_foods)
-        print('---------- End ----------')
-        try: 
-            os.remove(img_name)
-        except: pass
+            print('---------- Start FOOD Recognition --------')
+            list_foods = self.load_food_name(FOOD_TYPE)
+            self.recognize_food(img_name, list_foods)
+            print('---------- End ----------')
+            try: 
+                os.remove(img_name)
+            except: pass
