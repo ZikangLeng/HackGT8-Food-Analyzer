@@ -23,13 +23,13 @@ class database:
         for row in NutritionFile:
             if row[1] == id:
                 if row[2] == '1003':
-                    output.append("Protein: " + str(float(row[3])*mass/100) + " g")
+                    output.append("Protein: " + str(round(float(row[3])*mass/100),2) + " g")
                 elif row[2] == '1004':
-                    output.append("Fat: " + str(float(row[3])*mass/100) + " g")
+                    output.append("Fat: " + str(round(float(row[3])*mass/100),2) + " g")
                 elif row[2] == '1005':
-                    output.append("Carbs: " + str(float(row[3])*mass/100) + " g")
+                    output.append("Carbs: " + str(round(float(row[3])*mass/100),2) + " g")
                 elif row[2] == "1008":
-                    output.append("Calories: " + str(float(row[3])*mass/100) + " kCal")
+                    output.append("Calories: " + str(round(float(row[3])*mass/100),2) + " kCal")
         
         outputStr = ""
         for nutrient in output:
