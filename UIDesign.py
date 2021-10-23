@@ -34,23 +34,20 @@ class Ui_Dialog(object):
         self.weightText.setFrameStyle(0)
 
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
-        self.weightText.setGeometry(QtCore.QRect(470, 140, 150, 40))
-        self.weightText.setObjectName("weightText")
-        self.weightText.setText("Weight(in grams): ")
-        self.weightText.setFont(QtGui.QFont('Times font', 10))
-        self.weightText.setStyleSheet("background-color: transparent;")
-        self.weightText.setFrameStyle(0)
+        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 40))
+        self.weightEdit.setObjectName("weightEdit")
+        self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
         self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
-        self.imageButton.setGeometry(QtCore.QRect(80, 470, 261, 100))
+        self.imageButton.setGeometry(QtCore.QRect(80, 470, 220, 100))
         self.imageButton.setObjectName("processButton")
 
         self.addButton = QtWidgets.QPushButton(Dialog)
-        self.addButton.setGeometry(QtCore.QRect(480, 470, 251, 100))
+        self.addButton.setGeometry(QtCore.QRect(480, 470, 220, 100))
         self.addButton.setObjectName("imageButton")
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
