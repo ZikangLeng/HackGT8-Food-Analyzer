@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
+        Dialog.setObjectName("Food Analyzer")
         Dialog.resize(807, 662)
         self.graphicsView = QtWidgets.QGraphicsView(Dialog)
         self.graphicsView.setGeometry(QtCore.QRect(60, 90, 341, 301))
