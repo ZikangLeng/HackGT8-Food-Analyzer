@@ -13,6 +13,8 @@ from imageProcess import *
 from database import*
 
 class Ui_Dialog(object):
+    foodname="unknown"
+    weight=0
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(807, 662)
@@ -59,6 +61,7 @@ class Ui_Dialog(object):
         self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
+        self.weightButton.clicked.connect(self.weightButtonClicked)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
