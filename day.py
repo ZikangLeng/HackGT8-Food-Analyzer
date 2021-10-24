@@ -14,6 +14,3 @@ class Day():
     
     def getDayFacts(self):
         return "Calories: " + str(self.totalCal) + "\n" + "Protein: " + str(self.totalProtein) + "\n" + "Fat: " + str(self.totalFat) + "\n Carbohydrates: " + str(self.totalCarbs) + "\n"
-
-today = Day()
-print(today.getDayFacts())
