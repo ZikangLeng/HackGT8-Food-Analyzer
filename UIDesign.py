@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from imageProcess import *
 from database import*
 from day import*
+from food import*
 
 class Ui_Dialog(object):
     foodname="unknown"
@@ -92,10 +93,14 @@ class Ui_Dialog(object):
         self.nutrientText.setFont(QtGui.QFont('Times font', 14))
     
     def addButtonClicked(self):
-        self.weight = int(self.weightEdit.text())
-        nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
-        self.nutrientText.setText("Nutrient Fact \n" +nutrient)
-        self.nutrientText.setFont(QtGui.QFont('Times font', 14))
+        foods=Food(self.foodname,self.weight)
+        self.today.add(foods)
+        text = "Today total: \n" +self.today.getDayFacts()
+        for f in self.today.foods:
+            text= text +f.toString() +"\n"
+
+        self.totalText.setText("Today total: \n" +self.today.getDayFacts())
+
 
 
     def retranslateUi(self, Dialog):
