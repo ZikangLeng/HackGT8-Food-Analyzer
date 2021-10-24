@@ -13,6 +13,6 @@ class Day():
         self.totalFat += foodname.fat
         self.totalCarbs += foodname.carb
     def getDayFacts(self):
-        return "Total Cal " + str(round(self.totalCal),2) + " kCal Total Protein  " + str(round(self.totalProtein),2) + " g Total Fat " + str(round(self.totalFat),2) + " g Total Carbs " + str(round(self.totalCarbs),2) + " g"
+        return "Total Cal " + str(round(self.totalCal,2)) + " kCal Total Protein  " + str(round(self.totalProtein,2)) + " g Total Fat " + str(round(self.totalFat,2)) + " g Total Carbs " + str(round(self.totalCarbs,2)) + " g"
 
 
