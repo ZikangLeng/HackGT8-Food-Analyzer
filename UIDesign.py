@@ -33,6 +33,7 @@ class Ui_Dialog(object):
         self.totalText.setGeometry(QtCore.QRect(50, 550, 700, 300))
         self.totalText.setObjectName("totalText")
         self.totalText.setText("Today total: \n" +self.today.getDayFacts())
+        self.totalText.setFont(QtGui.QFont('Times font', 9))
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
         self.weightText.setGeometry(QtCore.QRect(470, 90, 200, 43))
@@ -92,10 +93,12 @@ class Ui_Dialog(object):
         self.nutrientText.setFont(QtGui.QFont('Times font', 14))
     
     def addButtonClicked(self):
-        self.weight = int(self.weightEdit.text())
-        nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
-        self.nutrientText.setText("Nutrient Fact \n" +nutrient)
-        self.nutrientText.setFont(QtGui.QFont('Times font', 14))
+        foods=Food(self.foodname,self.weight)
+        self.today.add(foods)
+        text = "Today total: \n" +self.today.getDayFacts()+"\n"
+        for f in self.today.foods:
+            text= text +f.toString() +"\n"
+        self.totalText.setText(text)
 
 
     def retranslateUi(self, Dialog):
