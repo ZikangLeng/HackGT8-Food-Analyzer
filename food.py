@@ -16,7 +16,6 @@ class Food:
         self.fat = database.getFat(database.getID(self.name), self.mass)
         self.carb = database.getCarbs(database.getID(self.name), self.mass)
 
-
     def toString(self):
         return self.name + ": Mass: " + str(self.mass) + " g " + " Calories: " + str(self.cal)  + " kCal Protein: " + str(self.prot)  + " g Fat: " + str(self.fat) + " g Carbohydrates: " + str(self.carb) + " g"
 
