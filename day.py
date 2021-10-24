@@ -16,8 +16,7 @@ class Day():
         self.totalCarbs += foodname.carb
 
 
-    
-    
+
 testFood = Food("milk", 200)
 print(testFood.toString())
 test = Day()
