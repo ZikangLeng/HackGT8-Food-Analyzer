@@ -73,6 +73,7 @@ class Ui_Dialog(object):
             image_profile = QtGui.QImage(image_path) #QImage object
             image_profile = image_profile.scaled(400,350, aspectRatioMode=QtCore.Qt.KeepAspectRatio, transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
             self.foodGraphic.setPixmap(QtGui.QPixmap.fromImage(image_profile)) 
+            self.foodname = imageProcesser.foodname
             self.nameText.setText("Name: "+imageProcesser.foodname)
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
