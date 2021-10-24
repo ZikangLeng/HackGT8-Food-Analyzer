@@ -19,10 +19,10 @@ class Ui_Dialog(object):
     today = Day()
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1300, 900)
+        Dialog.resize(800, 900)
 
         self.foodGraphic = QtWidgets.QLabel(Dialog)
-        self.foodGraphic.setGeometry(QtCore.QRect(60, 40, 341, 301))
+        self.foodGraphic.setGeometry(QtCore.QRect(50, 38, 341, 320))
         self.foodGraphic.setObjectName("foodGraphic")
      
         self.nameText = QtWidgets.QTextBrowser(Dialog)
@@ -30,9 +30,9 @@ class Ui_Dialog(object):
         self.nameText.setObjectName("nameText")
 
         self.totalText = QtWidgets.QTextBrowser(Dialog)
-        self.totalText.setGeometry(QtCore.QRect(50, 550, 700, 300))
+        self.totalText.setGeometry(QtCore.QRect(50, 550, 710, 300))
         self.totalText.setObjectName("totalText")
-        self.totalText.setText("Today total: \n" +self.today.getDayFacts())
+        self.totalText.setText("Today total: \n" +self.today.getDayFacts()+"\n-----------------------------------------------------------------------------------------------------\nToday's foods")
         self.totalText.setFont(QtGui.QFont('Times font', 9))
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
@@ -53,12 +53,12 @@ class Ui_Dialog(object):
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
-        self.imageButton.setGeometry(QtCore.QRect(70, 400, 200, 100))
+        self.imageButton.setGeometry(QtCore.QRect(50, 400, 200, 100))
         self.imageButton.setObjectName("processButton")
         self.imageButton.setFont(QtGui.QFont('Times font', 11))
 
         self.addButton = QtWidgets.QPushButton(Dialog)
-        self.addButton.setGeometry(QtCore.QRect(530, 400, 200, 100))
+        self.addButton.setGeometry(QtCore.QRect(560, 400, 200, 100))
         self.addButton.setObjectName("imageButton")
         self.addButton.setFont(QtGui.QFont('Times font', 11))
 
@@ -80,7 +80,7 @@ class Ui_Dialog(object):
             imageProcesser.takeImage()
             image_path = 'output.jpg' #path to your image file
             image_profile = QtGui.QImage(image_path) #QImage object
-            image_profile = image_profile.scaled(400,350, aspectRatioMode=QtCore.Qt.KeepAspectRatio, transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
+            image_profile = image_profile.scaled(400,360, aspectRatioMode=QtCore.Qt.KeepAspectRatio, transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
             self.foodGraphic.setPixmap(QtGui.QPixmap.fromImage(image_profile)) 
             self.foodname = imageProcesser.foodname
             self.nameText.setText("Name: "+imageProcesser.foodname)
@@ -95,7 +95,7 @@ class Ui_Dialog(object):
     def addButtonClicked(self):
         foods=Food(self.foodname,self.weight)
         self.today.add(foods)
-        text = "Today total: \n" +self.today.getDayFacts()+"\n"
+        text = "Today total: \n" +self.today.getDayFacts()+"\n-----------------------------------------------------------------------------------------------------\nToday's foods\n"
         for f in self.today.foods:
             text= text +f.toString() +"\n"
         self.totalText.setText(text)
