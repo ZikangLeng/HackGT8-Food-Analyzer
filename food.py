@@ -2,11 +2,7 @@ from database import *
 class Food:
     name = ""
     
-    mass = 0
-    cal =0
-    prot =0
-    fat = 0
-    carb = 0
+    mass, cal, prot, fat, carb = 0
 
     def __init__(self, in1, in2):
         self.name = in1
@@ -17,6 +13,6 @@ class Food:
         self.carb = database.getCarbs(database.getID(self.name), self.mass)
 
     def toString(self):
-        return self.name + ": Mass: " + str(self.mass) + " g " + " Calories: " + str(self.cal)  + " kCal Protein: " + str(self.prot)  + " g Fat: " + str(self.fat) + " g Carbohydrates: " + str(self.carb) + " g"
+        return self.name + "\n" + str(self.mass) + "\n" + database.getNutrition(database.getID(self.name), self.mass)
 
     
