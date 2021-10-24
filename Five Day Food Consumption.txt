@@ -1,0 +1,60 @@
+23rd October 2021
+Bagel 105
+Creamy Peanut Butter 32
+Coffee 10
+Tuna 56
+Bread 38
+Baby Carrots 10
+Milk 225
+Spaghetti 100
+Yogurt 110
+Apple 85
+,,
+24th October 2021
+Eggs 50
+Oatmeal 48
+Apple 85
+Bread 38
+Muffin 66
+Coffee 10
+Beef 95
+Tofu 150
+Beans 57
+Milk 225
+,,
+25th October 2021
+Raisins 45
+Banana 118
+Grapefruit 200
+Yogurt 110
+Beans 57
+Milk 225
+Chicken 100
+Muffin 66
+Bagel 105
+Baby Carrots 10
+,,
+26th October 2021
+Milk 225
+Tuna 56
+Oatmeal 48
+Coffee 10
+Beans 57
+Bread 38
+Creamy Peanut Butter 32
+Eggs 50
+Broccoli 30
+Yogurt 110
+,,
+27th October 2021
+Milk 225
+Chicken 100
+Bread 38
+Creamy Peanut Butter 32
+Muffin 66
+Tofu 150
+Apple 85
+Baby Carrots 10
+Beans 57
+Eggs 50
+,,

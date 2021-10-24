@@ -13,6 +13,6 @@ class Food:
         self.carb = database.getCarbs(database.getID(self.name), self.mass)
 
     def toString(self):
-        return self.name + "\n" + self.mass + "\n" + database.getNutrition(database.getID(self.name), self.mass)
+        return self.name + "\n" + str(self.mass) + "\n" + database.getNutrition(database.getID(self.name), self.mass)
 
     

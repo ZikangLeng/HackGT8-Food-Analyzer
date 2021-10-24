@@ -60,3 +60,6 @@ class database:
             if row[1] == id and row[2] == '1008':
                 return round(float(row[3])*mass/100,2)
         return 0
+
+        
+print(database.getNutrition(database.getID("apple"),200))
