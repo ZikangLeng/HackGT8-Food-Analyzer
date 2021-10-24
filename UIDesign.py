@@ -26,7 +26,7 @@ class Ui_Dialog(object):
         self.foodGraphic.setObjectName("foodGraphic")
      
         self.nameText = QtWidgets.QTextBrowser(Dialog)
-        self.nameText.setGeometry(QtCore.QRect(470, 40, 270, 45))
+        self.nameText.setGeometry(QtCore.QRect(470, 40, 290, 45))
         self.nameText.setObjectName("nameText")
 
         self.totalText = QtWidgets.QTextBrowser(Dialog)
@@ -43,12 +43,12 @@ class Ui_Dialog(object):
         self.weightText.setFrameStyle(0)
 
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
-        self.weightEdit.setGeometry(QtCore.QRect(630, 90, 120, 40))
+        self.weightEdit.setGeometry(QtCore.QRect(640, 90, 120, 40))
         self.weightEdit.setObjectName("weightEdit")
         self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
-        self.nutrientText.setGeometry(QtCore.QRect(470, 140, 270, 201))
+        self.nutrientText.setGeometry(QtCore.QRect(470, 140, 290, 210))
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
