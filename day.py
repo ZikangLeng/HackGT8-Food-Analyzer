@@ -5,13 +5,14 @@ class Day():
     totalCarbs = 0
     foods = []
 
-    def add(self, foodname, cal, protein, fat, carbs):
-        self.foods.append(foodname)
+    def add(self, food, cal, protein, fat, carbs):
+        self.foods.append(food)
         self.totalCal += cal
         self.totalProtein += protein
         self.totalFat += fat
         self.totalCarbs += carbs
     
-    def getDayFacts(self):
+    
+    def getDayTotals(self):
         return "Calories: " + self.totalCal + "\n" + "Protein: " + self.totalProtein + "\n" + "Fat: " + self.totalFat + "\n Carbohydrates: " + self.totalCarbs + "\n"
 
