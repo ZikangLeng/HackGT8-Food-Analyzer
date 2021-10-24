@@ -62,4 +62,4 @@ class database:
         return 0
 
         
-
+# print(database.getNutrition(database.getID("pizza"),200))
