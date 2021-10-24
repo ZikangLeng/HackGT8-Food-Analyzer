@@ -1,4 +1,3 @@
-23rd October 2021
 Bagel 105
 Creamy Peanut Butter 32
 Coffee 10
@@ -10,7 +9,6 @@ Spaghetti 100
 Yogurt 110
 Apple 85
 ,,
-24th October 2021
 Eggs 50
 Oatmeal 48
 Apple 85
@@ -22,7 +20,6 @@ Tofu 150
 Beans 57
 Milk 225
 ,,
-25th October 2021
 Raisins 45
 Banana 118
 Grapefruit 200
@@ -34,7 +31,6 @@ Muffin 66
 Bagel 105
 Baby Carrots 10
 ,,
-26th October 2021
 Milk 225
 Tuna 56
 Oatmeal 48
@@ -46,7 +42,6 @@ Eggs 50
 Broccoli 30
 Yogurt 110
 ,,
-27th October 2021
 Milk 225
 Chicken 100
 Bread 38
