@@ -99,7 +99,7 @@ class Ui_Dialog(object):
         for f in self.today.foods:
             text= text +f.toString() +"\n"
 
-        self.totalText.setText("Today total: \n" +self.today.getDayFacts())
+        #self.totalText.setText("Today total: \n" +self.today.getDayFacts())
 
 
 
