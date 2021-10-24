@@ -19,6 +19,7 @@ class Day():
     
     
 testFood = Food("milk", 200)
+print(testFood.toString())
 test = Day()
 test.add(testFood)
-print(test.getDayFacts())
+# print(test.getDayFacts())
