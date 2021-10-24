@@ -17,24 +17,30 @@ class Ui_Dialog(object):
     foodname="unknown"
     weight=0
     today = Day()
+
+    #set up the UI window
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(800, 900)
 
+        #initialize the label that will later show the food image
         self.foodGraphic = QtWidgets.QLabel(Dialog)
         self.foodGraphic.setGeometry(QtCore.QRect(50, 38, 341, 320))
         self.foodGraphic.setObjectName("foodGraphic")
      
+        #intialize the textbox that contains name of foods
         self.nameText = QtWidgets.QTextBrowser(Dialog)
         self.nameText.setGeometry(QtCore.QRect(470, 40, 290, 45))
         self.nameText.setObjectName("nameText")
 
+        #intialize the textbox that all the foods analyzed
         self.totalText = QtWidgets.QTextBrowser(Dialog)
         self.totalText.setGeometry(QtCore.QRect(50, 550, 710, 300))
         self.totalText.setObjectName("totalText")
         self.totalText.setText("Today total: \n" +self.today.getDayFacts()+"\n----------------------------------------------------------------------------------------------------\nToday's foods")
         self.totalText.setFont(QtGui.QFont('Times font', 9))
 
+        #intialize the "weight(in grams)" text
         self.weightText = QtWidgets.QTextBrowser(Dialog)
         self.weightText.setGeometry(QtCore.QRect(470, 90, 200, 43))
         self.weightText.setObjectName("weightText")
@@ -43,31 +49,38 @@ class Ui_Dialog(object):
         self.weightText.setStyleSheet("background-color: transparent;")
         self.weightText.setFrameStyle(0)
 
+        #initialize the textbox where user can input weight
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
         self.weightEdit.setGeometry(QtCore.QRect(640, 90, 120, 40))
         self.weightEdit.setObjectName("weightEdit")
         self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
+        #intialize the textbox that contains nutrients of the food
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
         self.nutrientText.setGeometry(QtCore.QRect(470, 140, 290, 210))
         self.nutrientText.setObjectName("nutrientText")
 
+        #intialize the button that will take photo of food when clicked
         self.imageButton = QtWidgets.QPushButton(Dialog)
         self.imageButton.setGeometry(QtCore.QRect(50, 400, 200, 100))
         self.imageButton.setObjectName("processButton")
         self.imageButton.setFont(QtGui.QFont('Times font', 11))
 
+        #intialize the button that will add food information to totalText when clicked
         self.addButton = QtWidgets.QPushButton(Dialog)
         self.addButton.setGeometry(QtCore.QRect(560, 400, 200, 100))
         self.addButton.setObjectName("imageButton")
         self.addButton.setFont(QtGui.QFont('Times font', 11))
 
+        #intialize the button that will take user inputed weight and 
+        #process food information when clicked
         self.weightButton = QtWidgets.QPushButton(Dialog)
         self.weightButton.setGeometry(QtCore.QRect(300, 400, 200, 100))
         self.weightButton.setObjectName("weightButton")
         self.weightButton.setText("Input Weight")
         self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
+        #link the button to respective clicked functions
         self.imageButton.clicked.connect(self.imageButtonClicked)
         self.weightButton.clicked.connect(self.weightButtonClicked)
         self.addButton.clicked.connect(self.addButtonClicked)
@@ -100,7 +113,7 @@ class Ui_Dialog(object):
             text= text +f.toString() +"\n"
         self.totalText.setText(text)
 
-
+    #load UIDesign.ui
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Food Analyzer"))
@@ -117,7 +130,7 @@ class Ui_Dialog(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Nutrition Fact</span></p></body></html>"))
 
-
+#start the UI
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
