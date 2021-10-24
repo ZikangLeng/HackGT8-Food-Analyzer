@@ -1,5 +1,6 @@
 from day import *
 class History:
+    #stores an array of days to store the logs of past food consumption 
     dayList = []
 
     def add(self, inputDay):
