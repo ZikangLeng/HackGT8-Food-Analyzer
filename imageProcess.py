@@ -8,13 +8,8 @@ from google.cloud import vision_v1p3beta1 as vision
 class imageProcess:
     foodname = "unknown"
 
-
     def load_food_name(self,food_type):
-        """
-        Load all known food type name.
-        :param food_type: Fruit or Vegetable
-        :return:
-        """
+        #parse list of foods to find food item names
         names = [line.rstrip('\n').lower() for line in open(food_type + '.dict')]
         return names
 
