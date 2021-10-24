@@ -13,4 +13,4 @@ class Day():
         self.totalCarbs += carbs
     
     def getDayFacts(self):
-        return "Total Calories: " + str(self.totalCal)  + " Total Protein: " + str(self.totalProtein)  + " Total Fat: " + str(self.totalFat) + " Total Carbohydrates: " + str(self.totalCarbs)
+        return "Total Calories: " + str(self.totalCal)  + " kCal Total Protein: " + str(self.totalProtein)  + " g Total Fat: " + str(self.totalFat) + " g Total Carbohydrates: " + str(self.totalCarbs) + " g"
