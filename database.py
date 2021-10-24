@@ -4,16 +4,19 @@ class database:
     
     def getID (keyword):
         FoodFile = csv.reader(open('food.csv', "r"), delimiter= ',')
+        #searches database for foods with exact matching name
         for data in FoodFile:
             id = data[0]
             name = data[2].split(",")[0].strip().lower()
             if name == keyword.lower():
                 return id
+        #searches database for food names that contains the keyword
         for data in FoodFile:
             id = data[0]
             name = data[2]
             if name.__contains__(keyword):
                 return id
+        #if not found return 00000
         return "00000"
 
     def getNutrition(id, mass):

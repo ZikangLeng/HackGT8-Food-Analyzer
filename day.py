@@ -1,3 +1,4 @@
+from food import *
 class Day():
     totalCal=0
     totalProtein = 0
@@ -5,13 +6,13 @@ class Day():
     totalCarbs = 0
     foods = []
 
-    def add(self, foodname, cal, protein, fat, carbs):
+    def add(self, foodname):
         self.foods.append(foodname)
-        self.totalCal += cal
-        self.totalProtein += protein
-        self.totalFat += fat
-        self.totalCarbs += carbs
-    
+        self.totalCal += foodname.cal
+        self.totalProtein += foodname.prot
+        self.totalFat += foodname.fat
+        self.totalCarbs += foodname.carb
     def getDayFacts(self):
-        return "Calories: " + self.totalCal + "\n" + "Protein: " + self.totalProtein + "\n" + "Fat: " + self.totalFat + "\n Carbohydrates: " + self.totalCarbs + "\n"
+        return "Total Cal " + str(round(self.totalCal,2)) + " kCal Total Protein  " + str(round(self.totalProtein,2)) + " g Total Fat " + str(round(self.totalFat,2)) + " g Total Carbs " + str(round(self.totalCarbs,2)) + " g"
+
 

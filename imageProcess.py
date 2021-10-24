@@ -1,7 +1,6 @@
 import io
 import os
 from datetime import datetime
-
 import cv2
 from google.cloud import vision_v1p3beta1 as vision
 
@@ -17,25 +16,17 @@ class imageProcess:
     def recognize_food(self,img_path, list_foods):
         start_time = datetime.now()
 
-        # Read image with opencv
+        #read image, get size, scale it, and save it to a temporary file
         img = cv2.imread(img_path)
-
-        # Get image size
         height, width = img.shape[:2]
-
-        # Scale image
         img = cv2.resize(img, (800, int((height * 800) / width)))
-
-        # Save the image to temp file
         cv2.imwrite("output.jpg", img)
 
-        # Create new img path for google vision
+        #set up relation between google vision and image
         img_path ="output.jpg"
-
-        # Create google vision client
         client = vision.ImageAnnotatorClient()
 
-        # Read image file
+        #read image file and get label of image
         with io.open(img_path, 'rb') as image_file:
             content = image_file.read()
 
@@ -46,9 +37,9 @@ class imageProcess:
          {'image': image, 'features': request_features})
         labels = response.label_annotations
         
+        #scoring system to see which prediction for image works
         for label in labels:
-           
-            desc = " "+label.description.lower()
+            desc = " " + label.description.lower()
             score = round(label.score, 2)
             print("label: ", desc, "  score: ", score)
             for food in list_foods:
@@ -63,6 +54,7 @@ class imageProcess:
             if self.foodname != "unknown":
                 break
 
+    #take image of food and process it
     def takeImage(self):
         camera_escaped = False
         cam = cv2.VideoCapture(0)
@@ -78,12 +70,12 @@ class imageProcess:
 
             k = cv2.waitKey(1)
             if k%256 == 27:
-                # ESC pressed
+                #if escape key is pressed, exit camera
                 print("Escape hit, closing...")
                 camera_escaped = True
                 break
             elif k%256 == 32:
-                # SPACE pressed
+                #if space is pressed, take a picture and exit camera
                 img_name = "opencv_frame_{}.png".format(0)
                 cv2.imwrite(img_name, frame)
                 print("{} written!".format(img_name))
@@ -93,16 +85,13 @@ class imageProcess:
 
         cv2.destroyAllWindows()
 
+        #if the user did not escape the camera, then process the picture
         if(camera_escaped == False):
             # Setup google authen client key
-            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
-
+            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'hackgt8-food-analyzer.json'
             FOOD_TYPE = 'Food'  # 'Vegetable'
-
-            print('---------- Start FOOD Recognition --------')
             list_foods = self.load_food_name(FOOD_TYPE)
             self.recognize_food(img_name, list_foods)
-            print('---------- End ----------')
-            try: 
+            try:
                 os.remove(img_name)
             except: pass
