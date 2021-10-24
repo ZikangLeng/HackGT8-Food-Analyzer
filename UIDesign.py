@@ -24,11 +24,11 @@ class Ui_Dialog(object):
         self.foodGraphic.setObjectName("foodGraphic")
      
         self.nameText = QtWidgets.QTextBrowser(Dialog)
-        self.nameText.setGeometry(QtCore.QRect(470, 90, 261, 40))
+        self.nameText.setGeometry(QtCore.QRect(470, 90, 270, 43))
         self.nameText.setObjectName("nameText")
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
-        self.weightText.setGeometry(QtCore.QRect(470, 140, 150, 40))
+        self.weightText.setGeometry(QtCore.QRect(470, 140, 160, 43))
         self.weightText.setObjectName("weightText")
         self.weightText.setText("Weight(in grams): ")
         self.weightText.setFont(QtGui.QFont('Times font', 10))
@@ -36,12 +36,12 @@ class Ui_Dialog(object):
         self.weightText.setFrameStyle(0)
 
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
-        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 40))
+        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 43))
         self.weightEdit.setObjectName("weightEdit")
         self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
-        self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
+        self.nutrientText.setGeometry(QtCore.QRect(470, 190, 270, 201))
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
