@@ -16,8 +16,3 @@ class Day():
         return "Total Cal " + str(self.totalCal) + " kCal Total Protein  " + str(self.totalProtein) + " g Total Fat " + str(self.totalFat) + " g Total Carbs " + str(self.totalCarbs) + " g"
 
 
-testFood = Food("milk", 200)
-print(testFood.toString())
-test = Day()
-test.add(testFood)
-print(test.getDayFacts())
