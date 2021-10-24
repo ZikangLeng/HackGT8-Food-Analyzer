@@ -11,24 +11,31 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from imageProcess import *
 from database import*
+from day import*
 
 class Ui_Dialog(object):
     foodname="unknown"
     weight=0
+    today = Day()
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(807, 662)
+        Dialog.resize(1300, 900)
 
         self.foodGraphic = QtWidgets.QLabel(Dialog)
-        self.foodGraphic.setGeometry(QtCore.QRect(60, 90, 341, 301))
+        self.foodGraphic.setGeometry(QtCore.QRect(60, 40, 341, 301))
         self.foodGraphic.setObjectName("foodGraphic")
      
         self.nameText = QtWidgets.QTextBrowser(Dialog)
-        self.nameText.setGeometry(QtCore.QRect(470, 90, 270, 45))
+        self.nameText.setGeometry(QtCore.QRect(470, 40, 270, 45))
         self.nameText.setObjectName("nameText")
 
+        self.totalText = QtWidgets.QTextBrowser(Dialog)
+        self.totalText.setGeometry(QtCore.QRect(50, 550, 700, 300))
+        self.totalText.setObjectName("totalText")
+        self.totalText.setText("Today total: \n" +self.today.getDayFacts())
+
         self.weightText = QtWidgets.QTextBrowser(Dialog)
-        self.weightText.setGeometry(QtCore.QRect(470, 140, 200, 43))
+        self.weightText.setGeometry(QtCore.QRect(470, 90, 200, 43))
         self.weightText.setObjectName("weightText")
         self.weightText.setText("Weight(in grams): ")
         self.weightText.setFont(QtGui.QFont('Times font', 10))
@@ -36,32 +43,33 @@ class Ui_Dialog(object):
         self.weightText.setFrameStyle(0)
 
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
-        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 40))
+        self.weightEdit.setGeometry(QtCore.QRect(630, 90, 120, 40))
         self.weightEdit.setObjectName("weightEdit")
         self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
-        self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
+        self.nutrientText.setGeometry(QtCore.QRect(470, 140, 270, 201))
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
-        self.imageButton.setGeometry(QtCore.QRect(70, 470, 200, 100))
+        self.imageButton.setGeometry(QtCore.QRect(70, 400, 200, 100))
         self.imageButton.setObjectName("processButton")
         self.imageButton.setFont(QtGui.QFont('Times font', 11))
 
         self.addButton = QtWidgets.QPushButton(Dialog)
-        self.addButton.setGeometry(QtCore.QRect(530, 470, 200, 100))
+        self.addButton.setGeometry(QtCore.QRect(530, 400, 200, 100))
         self.addButton.setObjectName("imageButton")
         self.addButton.setFont(QtGui.QFont('Times font', 11))
 
         self.weightButton = QtWidgets.QPushButton(Dialog)
-        self.weightButton.setGeometry(QtCore.QRect(300, 470, 200, 100))
+        self.weightButton.setGeometry(QtCore.QRect(300, 400, 200, 100))
         self.weightButton.setObjectName("weightButton")
         self.weightButton.setText("Input Weight")
         self.weightButton.setFont(QtGui.QFont('Times font', 11))
 
         self.imageButton.clicked.connect(self.imageButtonClicked)
         self.weightButton.clicked.connect(self.weightButtonClicked)
+        self.addButton.clicked.connect(self.addButtonClicked)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -78,6 +86,12 @@ class Ui_Dialog(object):
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
     def weightButtonClicked(self):
+        self.weight = int(self.weightEdit.text())
+        nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
+        self.nutrientText.setText("Nutrient Fact \n" +nutrient)
+        self.nutrientText.setFont(QtGui.QFont('Times font', 14))
+    
+    def addButtonClicked(self):
         self.weight = int(self.weightEdit.text())
         nutrient= database.getNutrition(database.getID(self.foodname),self.weight)
         self.nutrientText.setText("Nutrient Fact \n" +nutrient)
