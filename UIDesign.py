@@ -36,12 +36,12 @@ class Ui_Dialog(object):
         self.weightText.setFrameStyle(0)
 
         self.weightEdit = QtWidgets.QLineEdit(Dialog)
-        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 43))
+        self.weightEdit.setGeometry(QtCore.QRect(630, 140, 100, 40))
         self.weightEdit.setObjectName("weightEdit")
         self.weightEdit.setFont(QtGui.QFont('Times font', 10))
 
         self.nutrientText = QtWidgets.QTextBrowser(Dialog)
-        self.nutrientText.setGeometry(QtCore.QRect(470, 190, 270, 201))
+        self.nutrientText.setGeometry(QtCore.QRect(470, 190, 261, 201))
         self.nutrientText.setObjectName("nutrientText")
 
         self.imageButton = QtWidgets.QPushButton(Dialog)
@@ -73,7 +73,6 @@ class Ui_Dialog(object):
             image_profile = QtGui.QImage(image_path) #QImage object
             image_profile = image_profile.scaled(400,350, aspectRatioMode=QtCore.Qt.KeepAspectRatio, transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
             self.foodGraphic.setPixmap(QtGui.QPixmap.fromImage(image_profile)) 
-            self.foodname = imageProcesser.foodname
             self.nameText.setText("Name: "+imageProcesser.foodname)
             self.nameText.setFont(QtGui.QFont('Times font', 14))
 
