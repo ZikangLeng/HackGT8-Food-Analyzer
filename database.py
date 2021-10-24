@@ -1,7 +1,7 @@
 import csv,sys
 
 class database:
-    
+    #seaches database fpr what the fdc id of the entered food is
     def getID (keyword):
         FoodFile = csv.reader(open('food.csv', "r"), delimiter= ',')
         #searches database for foods with exact matching name
@@ -18,7 +18,7 @@ class database:
                 return id
         #if not found return 00000
         return "00000"
-
+    #return string containing all nutrition information of a food of a given id and mass
     def getNutrition(id, mass):
         output = []
         NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
@@ -38,6 +38,7 @@ class database:
             outputStr = outputStr + str(nutrient) + "\n"
         return outputStr 
         
+    #individual get statements for different attributes of the food
     def getProtein(id,mass):
         NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
         for row in NutritionFile:
@@ -65,4 +66,4 @@ class database:
         return 0
 
         
-print(database.getNutrition(database.getID("apple"),200))
+# print(database.getNutrition(database.getID("apple"),200))
