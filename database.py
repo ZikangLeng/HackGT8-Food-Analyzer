@@ -30,12 +30,36 @@ class database:
                     output.append("Carbs: " + str(round(float(row[3])*mass/100,2)) + " g")
                 elif row[2] == "1008":
                     output.append("Calories: " + str(round(float(row[3])*mass/100,2)) + " kCal")
-        
         outputStr = ""
         for nutrient in output:
             outputStr = outputStr + str(nutrient) + "\n"
         return outputStr 
+        
+    def getProtein(id,mass):
+        NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
+        for row in NutritionFile:
+            if row[1] == id and row[2] == '1003':
+                return round(float(row[3])*mass/100,2)
+        return 0
 
+    def getFat(id,mass):
+        NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
+        for row in NutritionFile:
+            if row[1] == id and row[2] == '1004':
+                return round(float(row[3])*mass/100,2)
+        return 0
+    def getCarbs(id,mass):
+        NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
+        for row in NutritionFile:
+            if row[1] == id and row[2] == '1005':
+                return round(float(row[3])*mass/100,2)
+        return 0
+    def getCal(id,mass):
+        NutritionFile = csv.reader(open("food_nutrient.csv","r"), delimiter= ',')
+        for row in NutritionFile:
+            if row[1] == id and row[2] == '1008':
+                return round(float(row[3])*mass/100,2)
+        return 0
 
-
+        
 
