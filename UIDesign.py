@@ -24,11 +24,11 @@ class Ui_Dialog(object):
         self.foodGraphic.setObjectName("foodGraphic")
      
         self.nameText = QtWidgets.QTextBrowser(Dialog)
-        self.nameText.setGeometry(QtCore.QRect(470, 90, 270, 43))
+        self.nameText.setGeometry(QtCore.QRect(470, 90, 270, 45))
         self.nameText.setObjectName("nameText")
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
-        self.weightText.setGeometry(QtCore.QRect(470, 140, 160, 43))
+        self.weightText.setGeometry(QtCore.QRect(470, 140, 200, 43))
         self.weightText.setObjectName("weightText")
         self.weightText.setText("Weight(in grams): ")
         self.weightText.setFont(QtGui.QFont('Times font', 10))
