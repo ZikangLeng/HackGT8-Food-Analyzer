@@ -18,6 +18,6 @@ class Food:
 
 
     def toString(self):
-        return self.name + "\n" + str(self.mass) + "\n" + database.getNutrition(database.getID(self.name), self.mass)
+        return self.name + " " + str(self.mass) + " g " + " Calories: " + str(self.cal)  + " kCal Protein: " + str(self.prot)  + " g Fat: " + str(self.fat) + " g Carbohydrates: " + str(self.carb) + " g"
 
     
