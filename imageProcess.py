@@ -95,7 +95,7 @@ class imageProcess:
 
         if(camera_escaped == False):
             # Setup google authen client key
-            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'astral-petal-329903-0138510647da.json'
+            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'hackgt8-food-analyzer.json'
 
             FOOD_TYPE = 'Food'  # 'Vegetable'
 
