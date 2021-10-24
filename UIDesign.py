@@ -32,7 +32,7 @@ class Ui_Dialog(object):
         self.totalText = QtWidgets.QTextBrowser(Dialog)
         self.totalText.setGeometry(QtCore.QRect(50, 550, 710, 300))
         self.totalText.setObjectName("totalText")
-        self.totalText.setText("Today total: \n" +self.today.getDayFacts()+"\n-----------------------------------------------------------------------------------------------------\nToday's foods")
+        self.totalText.setText("Today total: \n" +self.today.getDayFacts()+"\n----------------------------------------------------------------------------------------------------\nToday's foods")
         self.totalText.setFont(QtGui.QFont('Times font', 9))
 
         self.weightText = QtWidgets.QTextBrowser(Dialog)
@@ -95,7 +95,7 @@ class Ui_Dialog(object):
     def addButtonClicked(self):
         foods=Food(self.foodname,self.weight)
         self.today.add(foods)
-        text = "Today total: \n" +self.today.getDayFacts()+"\n-----------------------------------------------------------------------------------------------------\nToday's foods\n"
+        text = "Today total: \n" +self.today.getDayFacts()+"\n----------------------------------------------------------------------------------------------------\nToday's foods\n"
         for f in self.today.foods:
             text= text +f.toString() +"\n"
         self.totalText.setText(text)
